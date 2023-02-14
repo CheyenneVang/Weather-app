@@ -1,0 +1,25 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CheyenneVang/Weather-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CheyenneVang/Weather-app/issues"
+  },
+  "homepage": "https://github.com/CheyenneVang/Weather-app#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "hbs": "^4.0.1",
+    "request": "^2.88.0"
+  }
+}
