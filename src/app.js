@@ -16,24 +16,32 @@ const app = express()
 
 
 // Defining paths for Express configuration
-// generating path to the public folder
-// use .. to go up a folder, this will take us out of our src folder directory and then to the public folder directory
+// Generating path to the public folder
+// Use .. to go up a folder, this will take us out of our src folder directory and then to the public folder directory
 const fileDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
 
 // Setup handlebars (hbs) engine and views location
+// syntax: (the setting name, value)
+// Setting the a view engine. View engines allow us to render web pages using template files. Templates are filled with data and served to the client
+// it is important to write 'view engine' correctly with space and capitalization
+// The value is the name of the module we installed, which we installed hbs in this case
+// Now we can use this to create some dynamic templates
+// We have our handlebars templates living in a specific folder
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
 // express.static is a function and we're passing the return values to .use
 // static takes the path to the folder we want to serve up
-// this code configures our express application
+// app.use is configuring our express application
 app.use(express.static(fileDirectoryPath))
 
 
-// these are our route handlers
+// These are our route handlers
+// Setting up routes so that users can access the handlebar pages from our web server
+// The empty string for this will stand for the home page
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
@@ -80,12 +88,6 @@ app.get('/weather', (req, res) => {
             })
         })
     })
-
-    // res.send('help', {
-    //     forecast: 'It is snowing.',
-    //     location: 'Philadelphia',
-    //     address: req.query.address
-    // })
 })
 
 app.get('/products', (req, res) => {

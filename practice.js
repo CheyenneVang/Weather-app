@@ -15,19 +15,16 @@ const forecast = require('./src/utils/forecast');
 // const geocode = require('./utils/geocode')
 // const forecast = require('./utils/forecast')
 
-// use the weatherstack url
-const url = 'http://api.weatherstack.com/current?access_key=e3691a29e52ac669c0b83dc6977b03b6&query=37.8267,-122.4233&units=f'; // at the end of the url add &units=f to change from celcius to farenheit
+//Uuse the weatherstack url
+const url = 'http://api.weatherstack.com/current?access_key=e3691a29e52ac669c0b83dc6977b03b6&query=37.8267,-122.4233&units=f'; // At the end of the url add &units=f to change from celcius to farenheit
 
-// http://api.weatherstack.com/current?access_key=e3691a29e52ac669c0b83dc6977b03b6&query=37.8267,-122.4233
-
-// we are going to use request, which is a function
-// the first argument is an options object which outlines what we'd like to do. That's where we provide the url and other info
-// the second is a function to run and actually have that response
+// We are going to use request, which is a function
+// The first argument is an options object which outlines what we'd like to do. That's where we provide the url and other info
+// The second is a function to run and actually have that response
 // url: is a property and then provide the variable name, in this case ours its the url variable we made
 // now we make the call back function in the second argument. This function gets called with two arguments. If there was an error it owuld return undefined
 // do node app.js to run this
 // json: true atumocatically gets our data parsed for us, meaning it is true that our data is in json format
-
 
 
 
@@ -60,15 +57,11 @@ const url = 'http://api.weatherstack.com/current?access_key=e3691a29e52ac669c0b8
 
 
 
+// We have accessed our first http api from node.js, allowing us to pull outside information into our applications
 
+// Installed on chrome web store the JSON formatter extension
 
-
-
-// we have accessed our first http api from node.js, allowing us to pull outside information into our applications
-
-// installed on chrome web store the JSON formatter extension
-
-// challenge: print a small forecast to the user, printing a template literal and accessing in the ${} the temperature property value
+// Challenge: print a small forecast to the user, printing a template literal and accessing in the ${} the temperature property value
 // Example:
 // console.log(`It is currently ${response.body.current.temperature} degrees out. It feels like ${response.body.current.feelslike} degrees out.`)
 
@@ -99,48 +92,13 @@ const geocodeURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Ange
 // }
 
 
-
-
-
-
-// Pasted this into geocode.js
-// const geocode = (address, callback) => {
-//     // encodeURIComponent() is a function that returns a string
-//     const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) + '.json?access_token=pk.eyJ1IjoiY3ZhbmciLCJhIjoiY2xlMXAxYWd2MW15azNvbGdldGRkdmw3aiJ9.kI1WaYQ89vhzF-j9hOw5Xw';
-
-//     request({url: url, json: true}, (error, response) => {
-//         if (error) {
-//             console.log('Unable to connect to location services!', undefined)
-//         } else if (response.body.features.length === 0) {
-//             console.log('Unable to find location. Try another seearch.', undefined)
-//         } else {
-//             callback(undefined, {
-//                 latitude: response.body.features[0].center[1],
-//                 longitude: response.body.features[0].center[0],
-//                 location: response.body.features[0].place_name
-//             })
-//         } 
-//     })
-// }
-
+// Testing geocode and forecast
 // geocode('Philedalphia', (error, data) => {
 //     // console.log('Error', error)
 //     // console.log('Data', data) these are working
 //     if (error) {
 //         return console.log(error)
 //     }
-
-//     forecast(data.latitude, data.longitude, (error, forecastData) => {
-//         if (error) {
-//             return console.log(error)
-//         }
-
-//         console.log(data.location)
-//         console.log(forecastData)
-//     })
-// })
-
-
 
 
 // forecast(-75.7000, 44.1545, (error, data) => {
