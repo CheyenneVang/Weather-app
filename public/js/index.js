@@ -7,7 +7,7 @@ const messageTwo = document.querySelector('#message-2')
 
 
 weatherForm.addEventListener('submit', (e) => {
-    e.preventDefault()
+    e.preventDefault() // extracts value typed in search bar
 
     const location = search.value
 

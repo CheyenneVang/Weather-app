@@ -15,12 +15,31 @@ const app = express()
 // Install express (npm install express) which is installed in the Weather-app directory and not the src folder directory so that it joins in with the other packages
 
 
+
+
+
+
+
+
+
+
+
+
 // Defining paths for Express configuration
 // Generating path to the public folder
 // Use .. to go up a folder, this will take us out of our src folder directory and then to the public folder directory
 const fileDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
+
+
+
+
+
+
+
+
+
 
 // Setup handlebars (hbs) engine and views location
 // syntax: (the setting name, value)
@@ -64,8 +83,13 @@ app.get('/help', (req, res) => {
     })
 })
 
+
+// sending JSON data back to the browser to return the geocode and forecast functions
+// the request object has a query property on there
+// query is also an object that contains query string information
+
 app.get('/weather', (req, res) => {
-    if (!req.query.address) {
+    if (!req.query.address) { // the query string lives on request
         return res.send({
             error: 'You must provide an address!'
         })
@@ -92,12 +116,12 @@ app.get('/weather', (req, res) => {
 
 app.get('/products', (req, res) => {
     // this will run if there is no search term
-    if (!req.query.search) {
-        return res.send({
+    if (!req.query.search) { // grabbing string value for search using/accessing req.query.search and this statement will run only when something has gone wrong/when there is no search term
+        return res.send({ 
             error: 'You must provide a search term'
         })
     }
-    res.send({
+    res.send({ // if there is a search value provided then we'll see the products array coming back
         products: []
     })
 })
