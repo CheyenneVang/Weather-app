@@ -60,9 +60,13 @@ button {
 }
 
 .weather-icon {
-    margin: auto;
+    margin: 20px;
     display: flex;
     justify-content: center;
+}
+
+.help-form {
+    margin-bottom: 20px;
 }
 
 footer {
