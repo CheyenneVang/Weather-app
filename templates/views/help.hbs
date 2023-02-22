@@ -8,12 +8,15 @@
     <title>Help Page</title>
 </head>
 <body>
-    {{!-- <h1>Help Page</h1> --}}
     <section class="main-content">
         {{>header}}
+        <img src="img/weather-icon.jpeg" class="help-icon">
         <p>{{helpText}}</p>
+        <form>
+            <input placeholder="Enter here" class="help-field">
+            <button>Enter</button>
+         </form>
     </section>
-
     {{>footer}}
 </body>
 </html>
